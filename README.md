@@ -22,14 +22,14 @@ Plotting the forecast: The forecast is plotted using Streamlit's line_chart func
 Evaluation: The code calculates the root mean squared error (RMSE) between the forecast and the actual test data. The RMSE is a measure of the accuracy of the forecast.
 
 # CODE:
-  import pandas as pd
-  import numpy as np
-  from statsmodels.tsa.holtwinters import ExponentialSmoothing
-  from sklearn.metrics import mean_squared_error
-  import streamlit as st
-  from PIL import Image
+    import pandas as pd
+    import numpy as np
+    from statsmodels.tsa.holtwinters import ExponentialSmoothing
+    from sklearn.metrics import mean_squared_error
+    import streamlit as st
+    from PIL import Image
 
-  st.title("Time Series Forecasting By - HK")
+    st.title("Time Series Forecasting By - HK")
 
 # LOADING IMAGE
   image = Image.open('C:/Users/hudso/Downloads/FB_IMG_1653804268741.jpg')
