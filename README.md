@@ -22,53 +22,53 @@ Plotting the forecast: The forecast is plotted using Streamlit's line_chart func
 Evaluation: The code calculates the root mean squared error (RMSE) between the forecast and the actual test data. The RMSE is a measure of the accuracy of the forecast.
 
 # CODE:
-import pandas as pd
-import numpy as np
-from statsmodels.tsa.holtwinters import ExponentialSmoothing
-from sklearn.metrics import mean_squared_error
-import streamlit as st
-from PIL import Image
+ import pandas as pd
+ import numpy as np
+ from statsmodels.tsa.holtwinters import ExponentialSmoothing
+ from sklearn.metrics import mean_squared_error
+ import streamlit as st
+ from PIL import Image
 
-st.title("Time Series Forecasting By - HK")
+ st.title("Time Series Forecasting By - HK")
 
 # LOADING IMAGE
-image = Image.open('C:/Users/hudso/Downloads/FB_IMG_1653804268741.jpg')
-st.image(image, caption='HARI KRISHNA SRI SAI PRASAD MACHAVARAPU')
+ image = Image.open('C:/Users/hudso/Downloads/FB_IMG_1653804268741.jpg')
+ st.image(image, caption='HARI KRISHNA SRI SAI PRASAD MACHAVARAPU')
 
 # ADDS SNOW EFFECTS
-st.snow() 
+ st.snow() 
 
 # ADD BALLONS
-st.balloons()
+ st.balloons()
 
 
 # Load the data set
-df = pd.read_csv("C:/Users/hudso/Downloads/fedex/plasticallot.csv")
+ df = pd.read_csv("C:/Users/hudso/Downloads/fedex/plasticallot.csv")
 
 # Convert the date column to a datetime type
-df['date'] = pd.to_datetime(df['date'], format='%d-%m-%Y')
+ df['date'] = pd.to_datetime(df['date'], format='%d-%m-%Y')
 
 # Set the date column as the index
-df = df.set_index('date')
+ df = df.set_index('date')
 
 # Plot the data set
-st.line_chart(df)
+ st.line_chart(df)
 
 # Train/Test split
-train_data = df[:-12]
-test_data = df[-12:]
+ train_data = df[:-12]
+ test_data = df[-12:]
 
 # Define the model
-model = ExponentialSmoothing(train_data, trend="add", seasonal="add", seasonal_periods=12)
+ model = ExponentialSmoothing(train_data, trend="add", seasonal="add", seasonal_periods=12)
 
 # Fit the model
-model_fit = model.fit()
+ model_fit = model.fit()
 
 # Number of steps to forecast (slider)
-steps = st.slider("Number of steps to forecast", min_value=1, max_value=12, value=12)
+ steps = st.slider("Number of steps to forecast", min_value=1, max_value=12, value=12)
 
 # Forecast button
-if st.button("Forecast"):
+ if st.button("Forecast"):
   # Forecast for next steps
     forecast = model_fit.forecast(steps=steps)
 
