@@ -1,15 +1,16 @@
 # forecasting-using-exponetial-smoothing
-Optimization of Supply Chain Management 
+#Optimization of Supply Chain Management 
 
 business problem - Logistic company is facing lots of losses due to irregular demand of their sales
 
 business objective - to reduce loss
 
 A holt winter expontential smoothing model is build to predict the future sales so that the cilent can avoid looses
+#EDA
 As part of EDA is used basic excel and combined data into months by adding all days in that month.
 After doing that I taken that data and started building model.
 
-MODEL BUILDING:
+#MODEL BUILDING:
 
 The model is built in Python and uses the following libraries: Pandas, Numpy, Statsmodels, and Streamlit.
 The purpose of the model is to perform time series forecasting using the Exponential Smoothing method.
@@ -21,7 +22,7 @@ Forecast button: If the user clicks the "Forecast" button, the code uses the fit
 Plotting the forecast: The forecast is plotted using Streamlit's line_chart function.
 Evaluation: The code calculates the root mean squared error (RMSE) between the forecast and the actual test data. The RMSE is a measure of the accuracy of the forecast.
  
- CODE:
+ #CODE:
  import pandas as pd
 import numpy as np
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
