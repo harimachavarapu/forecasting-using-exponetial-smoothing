@@ -32,11 +32,15 @@ from PIL import Image
 st.title("Time Series Forecasting By - HK")
 
 # LOADING IMAGE
-
 image = Image.open('C:/Users/hudso/Downloads/FB_IMG_1653804268741.jpg')
 st.image(image, caption='HARI KRISHNA SRI SAI PRASAD MACHAVARAPU')
-st.snow()#ADDS SNOW EFFECTS
-st.balloons()#ADD BALLONS
+
+# ADDS SNOW EFFECTS
+st.snow() 
+
+# ADD BALLONS
+st.balloons()
+
 
 # Load the data set
 df = pd.read_csv("C:/Users/hudso/Downloads/fedex/plasticallot.csv")
